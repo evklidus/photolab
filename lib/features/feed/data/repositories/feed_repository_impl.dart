@@ -15,6 +15,7 @@ class FeedRepositoryImpl implements FeedRepository {
 
   @override
   Future<List<PhotoEntity>> getNewPhotos(int page) async {
+    // TODO: Если нет подключения к интернету, то использовать данные из БД
     if (!await networkInfo.isConnected) {
       throw InternetConnectionException();
     }
